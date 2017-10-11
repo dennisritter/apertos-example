@@ -14,7 +14,4 @@ npm run dev
 
 # minified production build 
 npm run build
-
-# Start e2e and unit tests
-npm run test
 ```
