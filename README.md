@@ -3,7 +3,7 @@ Example project fetching data from a CKAN-API using the [apertos-frontend](https
 
 ## Installation
 
-1. install Node.js and npm on your system following [this guide](https://nodejs.org/en/download/package-manager/)
+1. install Node.js (v8.6.0 or newer) and npm on your system following [this guide](https://nodejs.org/en/download/package-manager/)
 2. Clone or download the apertos-example project repository
 3. Open a terminal, navigate to ```apertos-example/ckan-adapters``` and install dependencies running ```npm install```
 4. Open a terminal, navigate to ```apertos-example/apertos-frontend``` and install dependencies running ```npm install```
