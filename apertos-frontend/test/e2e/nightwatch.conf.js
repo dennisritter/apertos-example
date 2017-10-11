@@ -14,7 +14,7 @@ module.exports = {
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
-      'webdriver.gecko.driver': require('geckodriver'),
+      //'webdriver.gecko.driver': require('geckodriver'),
     }
   },
 
@@ -36,13 +36,13 @@ module.exports = {
       }
     },
 
-    firefox: {
+    /*firefox: {
       desiredCapabilities: {
         browserName: 'firefox',
         marionette: true,
         javascriptEnabled: true,
         acceptSslCerts: true
       }
-    }
+    }*/
   }
 }

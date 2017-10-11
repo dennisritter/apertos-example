@@ -199,7 +199,44 @@
 154
 155
 156
-157</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -301,9 +338,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -403,18 +445,34 @@
     &lt;/div&gt;
     &lt;div class="column is-3"&gt;
       &lt;aside class="metadata box"&gt;
-        &lt;dl&gt;
-          &lt;dt&gt;Publisher&lt;/dt&gt;
-          &lt;dd&gt;{{ getPublisher || '-' }}&lt;/dd&gt;
-          &lt;dt&gt;Licence&lt;/dt&gt;
-          &lt;dd&gt;{{ getLicence || '-' }}&lt;/dd&gt;
-          &lt;dt&gt;Created&lt;/dt&gt;
-          &lt;dd&gt;{{ getReleaseDate | formatUS }}&lt;/dd&gt;
-          &lt;dt&gt;Last modification&lt;/dt&gt;
-          &lt;dd&gt;{{ getModificationDate | fromNow }}&lt;/dd&gt;
-          &lt;dt&gt;Tags&lt;/dt&gt;
-          &lt;dd class="tag is-primary" v-for="tag in getTags"&gt;{{ tag }}&lt;/dd&gt;
-        &lt;/dl&gt;
+        &lt;slot name="metadata-slot"
+              :categories="getCategories"
+              :description="getDescription"
+              :distributions="getDistributions"
+              :distributionFormats="getDistributionFormats"
+              :id="getID"
+              :idName="getIdName"
+              :language="getLanguage"
+              :license="getLicense"
+              :modificationDate="getModificationDate"
+              :publisher="getPublisher"
+              :releaseDate="getReleaseDate"
+              :tags="getTags"
+              :title="getTitle"
+              &gt;
+          &lt;dl&gt;
+            &lt;dt&gt;Publisher&lt;/dt&gt;
+            &lt;dd&gt;{{ getPublisher|| '-' }}&lt;/dd&gt;
+            &lt;dt&gt;License&lt;/dt&gt;
+            &lt;dd&gt;{{ getLicense|| '-' }}&lt;/dd&gt;
+            &lt;dt&gt;Created&lt;/dt&gt;
+            &lt;dd&gt;{{ getReleaseDate | formatUS }}&lt;/dd&gt;
+            &lt;dt&gt;Last modification&lt;/dt&gt;
+            &lt;dd&gt;{{ getModificationDate | fromNow }}&lt;/dd&gt;
+            &lt;dt&gt;Tags&lt;/dt&gt;
+            &lt;dd class="tag is-primary" v-for="tag in getTags"&gt;{{ tag }}&lt;/dd&gt;
+          &lt;/dl&gt;
+        &lt;/slot&gt;
       &lt;/aside&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -433,11 +491,16 @@
 <span class="cstat-no" title="statement not covered" >      return {}</span>;
     },
     computed: {
+      // import store-getters
       ...mapGetters('datasetDetails', [
         'getCategories',
         'getDescription',
         'getDistributions',
-        'getLicence',
+        'getDistributionFormats',
+        'getID',
+        'getIdName',
+        'getLanguage',
+        'getLicense',
         'getModificationDate',
         'getPublisher',
         'getReleaseDate',
@@ -446,6 +509,7 @@
       ]),
     },
     methods: {
+      // import store-actions
       ...mapActions('datasetDetails', [
         'loadDatasetDetails',
         'useService',
@@ -460,8 +524,7 @@
 <span class="cstat-no" title="statement not covered" >      this.useService(this.DatasetService)</span>;
 <span class="cstat-no" title="statement not covered" >      this.loadDatasetDetails(this.$route.params.ds_id)</span>;
     },
-    mounted() {
-    },
+    mounted() {},
   };
 &lt;/script&gt;
 &nbsp;
@@ -517,7 +580,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Sep 28 2017 18:54:01 GMT+0200 (Mitteleuropäische Sommerzeit)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 11 2017 14:21:43 GMT+0200 (Mitteleuropäische Sommerzeit)
 </div>
 </div>
 <script src="../prettify.js"></script>
