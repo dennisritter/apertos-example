@@ -1,0 +1,21 @@
+/**
+ * @author Dennis ritter
+ * @created 06.07.17
+ * @description Bundles files that define custom variables for this project.
+ */
+
+// import Bulmas Sass Functions to use them inside variable files.
+@import "~bulma/sass/utilities/functions"
+
+// import  nvd3 modules default styles for charts
+@import "~nvd3/build/nv.d3.css"
+
+// import Default/Fallback style variables
+@import "custom_bulma_variables_default"
+@import "custom_vars_default"
+
+// TODO: Presence of those files should not be a dependency to run the project (will crash if files are not present atm.)
+// Custom Bulma Design Framework variables
+@import "../../../../custom_bulma_variables"
+// Custom variables
+@import "../../../../custom_vars"
