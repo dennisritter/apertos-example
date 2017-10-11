@@ -8,3 +8,5 @@ yarn-error.log*
 ckan-adapters/node-modules
 apertos-frontend/node-modules
 node-modules
+
+.idea
