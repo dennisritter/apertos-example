@@ -5,13 +5,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-node-modules
+node_modules
 
 .idea
 
-apertos-frontend/node-modules
+apertos-frontend/node_modules
 apertos-frontend/package-lock.json
 apertos-frontend/test/unit/coverage
 
-ckan-adapters/node-modules
+ckan-adapters/node_modules
 ckan-adapters/package-lock.json
