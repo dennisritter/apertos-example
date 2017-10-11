@@ -1,5 +1,5 @@
 # apertos-example
-Example project using the [apertos-frontend](https://gitlab.fokus.fraunhofer.de/apertos/apertos-frontend) core-application for Open Data Plattforms
+Example project fetching data from a CKAN-API using the [apertos-frontend](https://gitlab.fokus.fraunhofer.de/apertos/apertos-frontend) core-application for Open Data Plattforms.
 
 ## Installation
 
