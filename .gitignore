@@ -10,3 +10,6 @@ apertos-frontend/node-modules
 node-modules
 
 .idea
+
+
+apertos-frontend/test/unit/coverage
