@@ -12,6 +12,7 @@ node_modules
 apertos-frontend/node_modules
 apertos-frontend/package-lock.json
 apertos-frontend/test/unit/coverage
+apertos-frontend/dist
 
 ckan-adapters/node_modules
 ckan-adapters/package-lock.json
