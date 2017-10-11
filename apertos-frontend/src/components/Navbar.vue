@@ -21,12 +21,8 @@
       <div class="nav-left is-hidden-tablet">
         <span class="image-wrapper">
           <a @click="$router.push({ path: `/home` })">
-            <img class="navbar-logo" src="../assets/img/fokus_85mm_CMYK_2016.svg"
+            <img class="navbar-logo" src="../assets/img/fokus_85mm_weiss.svg"
                  alt="Logo of the Fraunhofer Institute for Open Communication Systems"/>
-          </a>
-          <a @click="$router.push({ path: `/home` })">
-            <img class="navbar-logo" src="../assets/img/ids-logo.png"
-                 alt="Logo of the Industrial Data Space project"/>
           </a>
         </span>
       </div>

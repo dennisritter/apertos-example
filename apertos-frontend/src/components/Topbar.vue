@@ -3,12 +3,8 @@
     <div class="column is-5 is-offset-1 is is-paddingless">
       <span>
         <a @click="$router.push({ path: `/home` })">
-          <img class="topbar-logo" src="../assets/img/fokus_85mm_CMYK_2016.svg"
+          <img class="topbar-logo" src="../assets/img/fokus_85mm_weiss.svg"
                alt="Logo of the Fraunhofer Institute for Open Communication Systems"/>
-        </a>
-        <a @click="$router.push({ path: `/home` })">
-          <img class="topbar-logo" src="../assets/img/ids-logo.png"
-               alt="Logo of the Industrial Data Space project"/>
         </a>
       </span>
     </div>
