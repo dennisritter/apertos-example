@@ -11,7 +11,7 @@
 
 <script>
   import About from '@/components/About';
-  import glueConfig from '../../../../glue-config';
+  // import glueConfig from '../../../../glue-config';
 
   export default {
     // Don't change the values for 'name' or 'components'
@@ -30,8 +30,8 @@
     mounted() {
       const container = this.$refs.about;
       // Experimental import of a template defined outside of this repository via the glueConfig.js
-      if (glueConfig.templates.about) container.innerHTML = glueConfig.templates.about;
-      else container.innerHTML = '<p>Sorry, there is no content.</p>';
+      // if (glueConfig.templates.about) container.innerHTML = glueConfig.templates.about;
+      container.innerHTML = '<p>Sorry, there is no content.</p>';
     },
   };
 </script>
